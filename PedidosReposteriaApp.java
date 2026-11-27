@@ -52,14 +52,16 @@ public class PedidosReposteriaApp {
     /** Decorador concreto: mensaje escrito con chocolate. */
     static class ConMensaje extends Extra {
         private final String texto;
-        ConMensaje(Postre postre, String texto) { super(postre); this.texto = texto; }
+        ConMensaje(Postre postre, String texto) { 
+            super(postre); this.texto = texto; }
         public String descripcion() { return postre.descripcion() + " + Mensaje \"" + texto + "\""; }
         public double precio() { return postre.precio() + 10; }
     }
 
     /** Decorador concreto: caja de regalo para llevar. */
     static class CajaRegalo extends Extra {
-        CajaRegalo(Postre postre) { super(postre); }
+        CajaRegalo(Postre postre) { 
+            super(postre); }
         public String descripcion() { return postre.descripcion() + " + Caja de regalo"; }
         public double precio() { return postre.precio() + 15; }
     }
